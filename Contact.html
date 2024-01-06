@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(pavan.jpeg);
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .footer{
+        color: black;
+     
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    if (name === "" || email === "" || message === "") {
+      alert("All fields must be filled out");
+      return false;
+    }
+
+    // You can add additional validation logic here, for example, email format validation.
+
+    alert("Form submitted successfully!");
+    document.getElementById('contactForm').reset();
+  }
+</script>
+
+</body>
+<footer>
+    &copy;<strong>All rights are reserved</strong> 
+</footer>
+</html>
